@@ -39,7 +39,7 @@ export default function SideDrawer({ children }) {
       </List>
       <Divider sx={{ backgroundColor: "white" }} />
       <List>
-        {["HOME", "ABOUT", "PROJECTS", "SKILLS", "CONTACTS"].map(
+        {["HOME", "ABOUT", "SERVICES", "SKILLS", "CONTACTS"].map(
           (text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton sx={{ color: "white" }}>

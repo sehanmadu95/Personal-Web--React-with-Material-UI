@@ -60,7 +60,7 @@ const Header = () => {
             >
               <NavItem name="Home" />
               <NavItem name="About" />
-              <NavItem name="Project" />
+              <NavItem name="Services" />
               <NavItem name="Skills" />
               <NavItem name="Contact" />
             </Box>

@@ -5,6 +5,7 @@ import Header from "./component/header/Header";
 //import BodyFrame from "./component/body/BodyFrame";
 import AboutMe from "./component/body/AboutMe";
 import MyServices from "./component/body/MyServices";
+import MySkills from "./component/body/MySkills";
 
 const BodyFrame = React.lazy(() => import("./component/body/BodyFrame"));
 const App = () => {
@@ -35,6 +36,15 @@ const App = () => {
           }}
         >
           <MyServices></MyServices>
+        </Box>
+
+        <Box
+          sx={{
+            background: "#17202a", // Dark gradient
+            //height: "100vh", // Full height of the viewport
+          }}
+        >
+          <MySkills></MySkills>
         </Box>
       </Box>
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 import ActionAreaCard from "../cards/ActionAreaCard";
-import { Box, Grid, Grid2, Typography } from "@mui/material";
+import { Box, Divider, Grid, Grid2, Typography } from "@mui/material";
 
 const MyServices = () => {
   return (
@@ -37,12 +37,14 @@ const MyServices = () => {
 
         <Grid item xs={12} sm={4}>
           <ActionAreaCard
-            name="Front-end development"
+            name="Front-End Development"
             img="/graphic.png"
             description="Hi, I have much experience about Graphic design.Contact me if you need any Help.                                                        "
           ></ActionAreaCard>
         </Grid>
       </Grid>
+
+      {/* <Divider sx={{ backgroundColor: "black", borderWidth: 2 }} /> */}
     </div>
   );
 };
