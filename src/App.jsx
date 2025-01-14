@@ -6,6 +6,8 @@ import Header from "./component/header/Header";
 import AboutMe from "./component/body/AboutMe";
 import MyServices from "./component/body/MyServices";
 import MySkills from "./component/body/MySkills";
+import ContactForm from "./component/body/Contact";
+import Footer from "./component/footer/Footer";
 
 const BodyFrame = React.lazy(() => import("./component/body/BodyFrame"));
 const App = () => {
@@ -45,6 +47,19 @@ const App = () => {
           }}
         >
           <MySkills></MySkills>
+        </Box>
+
+        <Box
+          sx={{
+            background: "#17202a", // Dark gradient
+            //height: "100vh", // Full height of the viewport
+          }}
+        >
+          <ContactForm></ContactForm>
+        </Box>
+
+        <Box>
+          <Footer></Footer>
         </Box>
       </Box>
     </>
