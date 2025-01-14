@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Grid, TextField, Button, Typography, Paper } from "@mui/material";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -33,8 +34,33 @@ const ContactForm = () => {
       setErrors(validationErrors);
     } else {
       setErrors({});
-      alert("Form submitted successfully!");
-      // Add form submission logic here (API call, etc.)
+      emailjs
+        .send(
+          "service_fhbbmjs", // Replace with your EmailJS service ID
+          "template_f1i1eyt", // Replace with your EmailJS template ID
+          {
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+          },
+          "wjf5MpySK5xAAGEeq" // Replace with your EmailJS user ID (API key)
+        )
+        .then(
+          (response) => {
+            alert("Email sent successfully!");
+            setFormData({
+              name: "",
+              email: "",
+              subject: "",
+              message: "",
+            });
+          },
+          (error) => {
+            alert("Failed to send email. Please try again later.");
+            console.error("EmailJS error:", error);
+          }
+        );
     }
   };
 
@@ -65,7 +91,6 @@ const ContactForm = () => {
         </Typography>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
-            {/* Name Field */}
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -78,8 +103,6 @@ const ContactForm = () => {
                 helperText={errors.name}
               />
             </Grid>
-
-            {/* Email Field */}
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -92,8 +115,6 @@ const ContactForm = () => {
                 helperText={errors.email}
               />
             </Grid>
-
-            {/* Subject Field */}
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -106,8 +127,6 @@ const ContactForm = () => {
                 helperText={errors.subject}
               />
             </Grid>
-
-            {/* Message Field */}
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -122,8 +141,6 @@ const ContactForm = () => {
                 helperText={errors.message}
               />
             </Grid>
-
-            {/* Submit Button */}
             <Grid item xs={12}>
               <Button
                 type="submit"
