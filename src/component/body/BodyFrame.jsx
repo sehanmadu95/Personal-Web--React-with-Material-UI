@@ -31,7 +31,7 @@ const BodyFrame = () => {
 
         {/* Image */}
         <img
-          src="/frame.JPG"
+          src="frame.JPG"
           alt="Responsive"
           style={{
             width: "100%", // Make the image fill the width of the container
@@ -103,10 +103,13 @@ const BodyFrame = () => {
                 "&:hover": {
                   backgroundColor: "red",
                 },
-                padding: "10px 20px",
+                padding: { xs: "8px 16px", sm: "10px 20px", md: "12px 24px" }, // Adjust padding for different screen sizes
                 marginTop: "15px",
                 fontFamily: "revert",
                 fontWeight: "bold",
+                fontSize: { xs: "12px", sm: "14px", md: "16px" }, // Adjust font size
+                width: { xs: "90%", sm: "auto" }, // Full width on smaller screens, auto on larger
+                textAlign: "center",
               }}
             >
               Download Resume

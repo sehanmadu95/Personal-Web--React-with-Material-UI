@@ -63,7 +63,7 @@ const AboutMe = () => {
             }}
           >
             <img
-              src="/circle.png"
+              src="circle.png"
               alt="Responsive"
               style={{
                 width: "100%", // Make the image fill the width of the container

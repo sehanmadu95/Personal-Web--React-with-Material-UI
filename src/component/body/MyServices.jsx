@@ -22,7 +22,7 @@ const MyServices = () => {
         <Grid item xs={12} sm={4}>
           <ActionAreaCard
             name="Full-Stack Development"
-            img="/code.png"
+            img="code.png"
             description="Hi, I have much experience about development console and GUI application using below mention languages.Contact me if you need any Help."
           ></ActionAreaCard>
         </Grid>
@@ -30,7 +30,7 @@ const MyServices = () => {
         <Grid item xs={12} sm={4}>
           <ActionAreaCard
             name="Back-End Developement"
-            img="/web.jpg"
+            img="web.jpg"
             description="Hi, I have much experience about development Web application using below mention languages.Contact me if you need any Help.            "
           ></ActionAreaCard>
         </Grid>
@@ -38,7 +38,7 @@ const MyServices = () => {
         <Grid item xs={12} sm={4}>
           <ActionAreaCard
             name="Front-End Development"
-            img="/graphic.png"
+            img="graphic.png"
             description="Hi, I have much experience about Graphic design.Contact me if you need any Help.                                                        "
           ></ActionAreaCard>
         </Grid>
