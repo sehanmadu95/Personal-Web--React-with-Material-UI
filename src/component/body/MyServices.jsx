@@ -5,7 +5,7 @@ import { Box, Divider, Grid, Grid2, Typography } from "@mui/material";
 const MyServices = () => {
   return (
     <div>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center" id="myservice">
         {" "}
         <Typography
           variant="h5"

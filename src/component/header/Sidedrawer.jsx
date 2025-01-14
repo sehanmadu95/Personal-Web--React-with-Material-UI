@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
@@ -10,9 +10,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import { Link } from "react-scroll"; // Import react-scroll
 
 export default function SideDrawer({ children }) {
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     left: false,
   });
 
@@ -27,11 +28,12 @@ export default function SideDrawer({ children }) {
     setState({ ...state, [anchor]: open });
   };
 
+  const sections = ["home", "about", "myservice", "skills", "contact"]; // Section IDs
+
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
@@ -39,23 +41,24 @@ export default function SideDrawer({ children }) {
       </List>
       <Divider sx={{ backgroundColor: "white" }} />
       <List>
-        {["HOME", "ABOUT", "SERVICES", "SKILLS", "CONTACTS"].map(
-          (text, index) => (
-            <ListItem key={text} disablePadding>
+        {sections.map((section, index) => (
+          <Link
+            key={section}
+            to={section} // Scroll to the section ID
+            smooth={true} // Smooth scrolling effect
+            duration={500} // Scroll duration in ms
+            offset={-70} // Offset to adjust for fixed elements
+          >
+            <ListItem disablePadding onClick={toggleDrawer(anchor, false)}>
               <ListItemButton sx={{ color: "white" }}>
-                {" "}
-                {/* Custom text color */}
                 <ListItemIcon sx={{ color: "white" }}>
-                  {" "}
-                  {/* Custom icon color */}
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} sx={{ color: "white" }} />{" "}
-                {/* Custom text color */}
+                <ListItemText primary={section.toUpperCase()} />
               </ListItemButton>
             </ListItem>
-          )
-        )}
+          </Link>
+        ))}
       </List>
     </Box>
   );
@@ -70,7 +73,7 @@ export default function SideDrawer({ children }) {
           onClose={toggleDrawer("left", false)}
           sx={{
             "& .MuiDrawer-paper": {
-              backgroundColor: "#212121", // Custom background color for the drawer
+              backgroundColor: "#212121",
             },
           }}
         >

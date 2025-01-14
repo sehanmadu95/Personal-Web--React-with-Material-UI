@@ -5,6 +5,7 @@ const MySkills = () => {
   return (
     <>
       <Box
+        id="skills"
         sx={{
           display: "flex",
           flexWrap: "wrap",

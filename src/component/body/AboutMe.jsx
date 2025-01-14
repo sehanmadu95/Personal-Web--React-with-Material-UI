@@ -14,7 +14,7 @@ const AboutMe = () => {
       >
         {/* Text Section */}
         <Grid item xs={12} sm={6}>
-          <Box display="flex" justifyContent="center" mt={2}>
+          <Box display="flex" justifyContent="center" mt={2} id="about">
             <Typography variant="h5" fontWeight="bold">
               ABOUT ME
             </Typography>

@@ -9,6 +9,7 @@ const BodyFrame = () => {
     <div>
       <Toolbar />
       <Box
+        id="home"
         sx={{
           width: "100%", // Full width of the container
           height: "auto", // Maintain aspect ratio
@@ -72,7 +73,7 @@ const BodyFrame = () => {
               gutterBottom
               sx={{
                 fontSize: "2vw", // Adjust this as needed
-                fontFamily: "cursive",
+                fontFamily: "monospace",
               }}
             >
               <Typewriter
@@ -92,28 +93,35 @@ const BodyFrame = () => {
               />
             </Typography>
 
-            <Button
-              variant="contained"
-              startIcon={<DownloadIcon />}
-              sx={{
-                backgroundColor: "black",
-                color: "white",
-                border: "2px solid red",
-                borderRadius: "20px",
-                "&:hover": {
-                  backgroundColor: "red",
-                },
-                padding: { xs: "8px 16px", sm: "10px 20px", md: "12px 24px" }, // Adjust padding for different screen sizes
-                marginTop: "15px",
-                fontFamily: "revert",
-                fontWeight: "bold",
-                fontSize: { xs: "12px", sm: "14px", md: "16px" }, // Adjust font size
-                width: { xs: "90%", sm: "auto" }, // Full width on smaller screens, auto on larger
-                textAlign: "center",
-              }}
+            <a
+              href="https://drive.google.com/file/d/1a_N4NevaXk7OUfVB9tscXVCkhN_50IlI/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }} // Remove underline from link
             >
-              Download Resume
-            </Button>
+              <Button
+                variant="contained"
+                startIcon={<DownloadIcon />}
+                sx={{
+                  backgroundColor: "black",
+                  color: "white",
+                  border: "2px solid red",
+                  borderRadius: "20px",
+                  "&:hover": {
+                    backgroundColor: "red",
+                  },
+                  padding: { xs: "8px 16px", sm: "10px 20px", md: "12px 24px" }, // Adjust padding for different screen sizes
+                  marginTop: "15px",
+                  fontFamily: "revert",
+                  fontWeight: "bold",
+                  fontSize: { xs: "12px", sm: "14px", md: "16px" }, // Adjust font size
+                  width: { xs: "90%", sm: "auto" }, // Full width on smaller screens, auto on larger
+                  textAlign: "center",
+                }}
+              >
+                Download Resume
+              </Button>
+            </a>
           </div>
         </Box>
       </Box>

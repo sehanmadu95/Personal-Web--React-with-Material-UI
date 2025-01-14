@@ -58,11 +58,11 @@ const Header = () => {
                 gap: 3, // Space between NavItems
               }}
             >
-              <NavItem name="Home" />
-              <NavItem name="About" />
-              <NavItem name="Services" />
-              <NavItem name="Skills" />
-              <NavItem name="Contact" />
+              <NavItem name="Home" to="home" />
+              <NavItem name="About" to="about" />
+              <NavItem name="Services" to="myservice" />
+              <NavItem name="Skills" to="skills" />
+              <NavItem name="Contact" to="contact" />
             </Box>
           </Toolbar>
         </AppBar>

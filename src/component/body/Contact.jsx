@@ -50,6 +50,7 @@ const ContactForm = () => {
       }}
     >
       <Paper
+        id="contact"
         elevation={3}
         sx={{
           width: "100%",
