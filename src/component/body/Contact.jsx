@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Box, Grid, TextField, Button, Typography, Paper } from "@mui/material";
 import emailjs from "emailjs-com";
+import SnackBarAlert from "./SnackBarAlert.Jsx";
 
 const ContactForm = () => {
+  const snackbarRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,7 +50,7 @@ const ContactForm = () => {
         )
         .then(
           (response) => {
-            alert("Email sent successfully!");
+            snackbarRef.current.showMessage("Email sent successfully!");
             setFormData({
               name: "",
               email: "",
@@ -57,7 +59,9 @@ const ContactForm = () => {
             });
           },
           (error) => {
-            alert("Failed to send email. Please try again later.");
+            snackbarRef.current.showMessage(
+              "Failed to send email. Please try again later."
+            );
             console.error("EmailJS error:", error);
           }
         );
@@ -154,6 +158,9 @@ const ContactForm = () => {
           </Grid>
         </form>
       </Paper>
+
+      {/* Include SnackBarAlert Component */}
+      <SnackBarAlert ref={snackbarRef} />
     </Box>
   );
 };
