@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Box, Grid, TextField, Button, Typography, Paper } from "@mui/material";
 import emailjs from "emailjs-com";
-import SnackBarAlert from "./SnackBarAlert.Jsx";
+import SnackBarAlert from "./Snackbar";
 
 const ContactForm = () => {
   const snackbarRef = useRef();
