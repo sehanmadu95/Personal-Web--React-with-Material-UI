@@ -1,8 +1,6 @@
 import React from "react";
 import { ThemeProvider, CssBaseline, Box, Container } from "@mui/material";
-
 import Header from "./component/header/Header";
-//import BodyFrame from "./component/body/BodyFrame";
 import AboutMe from "./component/body/AboutMe";
 import MyServices from "./component/body/MyServices";
 import MySkills from "./component/body/MySkills";
